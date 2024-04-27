@@ -1,0 +1,5 @@
+1. Used prop drilling techniques
+2. Used local Storage so that data is not lost after state change
+3. Hooks used are useState only
+4. Tried to complete almost all the functionalites as mentioned in Email attachment.
+5. Link to static website: https://somuthegamer49.github.io/IITB_Somdutt_Acharya/
