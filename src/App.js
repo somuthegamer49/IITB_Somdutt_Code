@@ -1,24 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import {Fragment, React, useState} from 'react'
+import Navbar from './components/Navbar';
+import Container from './components/Container';
+import Form from './components/Form';
+
 
 function App() {
+  let[formState,setformState]=useState(false)
+  let[formStateedit,setformStateedit]=useState(false)
+  let[ecard,setecard]=useState()
+  let[eindex,seteindex]=useState()
+  const getformState=(data)=>{
+    setformState(!data)
+  }
+  const getformStateedit=(data)=>{
+    setformStateedit(!data)
+  }
+  const getCard=(item,index)=>{
+    setecard(item)
+    seteindex(index)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <Navbar/>
+      <Container getCard={getCard} formState={formState}  getformState={ getformState} getformStateedit={getformStateedit}/>
+      <Form  getformStateedit={getformStateedit} ecard={ecard} eindex={eindex} formStateedit={formStateedit} formState={formState} getformState={ getformState}/>
+    </Fragment>
   );
 }
 
